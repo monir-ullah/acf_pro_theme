@@ -13,20 +13,47 @@
                   <div class="bg-wrap">
                      <div class="row">
                         <div class="col-md-6 d-flex align-items-center">
-                           <p class="mb-0 phone pl-md-2">
-                              <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a> 
-                              <a href="#"><span class="fa fa-paper-plane mr-1"></span> youremail@email.com</a>
-                           </p>
+                           <?php
+                              $header_contact_info = get_field('header_contact_info','option');
+                              $header_infos =  $header_contact_info['header_contact_information'];
+                           ?>
+                           <?php 
+                              if($header_infos){ ?>
+                                    <p class="mb-0 phone pl-md-2">
+                                      <?php  foreach($header_infos as $info){ ?>
+                                          <a href="#" class="mr-3"><i class="fa <?php echo $info['info_icon'];?> mr-2"></i><?php echo $info['info_text'] ?></a> 
+                                          <?php
+                                        } 
+                                       ?>
+                                    </p>
+                                 <?php
+                              }
+                           ?> 
                         </div>
                         <div class="col-md-6 d-flex justify-content-md-end">
-                           <div class="social-media">
-                              <p class="mb-0 d-flex">
-                                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-                              </p>
-                           </div>
+                           <?php 
+                              $header_social = get_field('header_social','option');
+                              $header_social_repeater = $header_social['header_social_repeater'];
+                              if($header_social_repeater){ ?>
+                                 <div class="social-media">
+                                    <p class="mb-0 d-flex">
+                                       <?php 
+                                          foreach($header_social_repeater as $single_social){
+                                             
+                                             $header_social_icon = $single_social['header_social_icon'];
+                                             $header_social_link = $single_social['header_social_link'];
+                                             if($header_social_icon){ ?>
+                                                <a href="<?php echo $header_social_link;?>" class="d-flex align-items-center justify-content-center"><i class="fa <?php echo $header_social_icon;?>"></i></a>
+                                              <?php
+                                             }
+                                          } 
+                                       ?>
+                                    </p>
+                                 </div>
+                               <?php
+                              }
+                           ?>
+                           
                         </div>
                      </div>
                   </div>

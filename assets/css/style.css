@@ -10572,14 +10572,14 @@ h5,
   height: 40px;
   margin-right: 1px;
 }
-.social-media p a span {
+.social-media p a i {
   color: #fff;
 }
 .social-media p a:hover {
   background: #1ba12d;
   border-color: #1ba12d;
 }
-.social-media p a:hover span {
+.social-media p a:hover i {
   color: #fff;
 }
 
@@ -12044,7 +12044,7 @@ textarea.form-control {
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
-  -webkit-backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden; */
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
