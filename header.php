@@ -63,18 +63,29 @@
       </div>
       <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
          <div class="container">
-            <a class="navbar-brand" href="index.html">Accounting</a>
+            <!-- This is for logo -->
+            <a class="navbar-brand" href="index.html">
+               <?php 
+                  if ( has_custom_logo() ){
+                     the_custom_logo();
+                  }else{
+                     echo get_bloginfo('name');
+                  }
+               ?>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars"></span> Menu
+               <span class="fa fa-bars"></span> Menu
             </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                  <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                  <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                  <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                  <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-               </ul>
-            </div>
+            <?php 
+               wp_nav_menu( array(
+                  'menu'           => '', // Do not fall back to first non-empty menu.
+                  'menu_class'        => "navbar-nav ml-auto",
+                  'theme_location' => 'primary_menu',
+                  'container_class'   => "collapse navbar-collapse", 
+                  'container_id'      => "ftco-nav", 
+               
+               ) );
+
+            ?>
          </div>
       </nav>

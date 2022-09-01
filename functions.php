@@ -3,6 +3,29 @@
 // Including acf option page for theme options
 include( get_template_directory() . '/inc/acf-options.php' );
 
+function acfPro_add_theme_support(){
+
+    load_theme_textdomain('acfPro', get_template_directory() . '/languages');
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails', array( 'post' ) );
+    $header_custom_logo = array(
+        'height'               => 100,
+        'width'                => 400,
+        'flex-height'          => true,
+        'flex-width'           => true,
+        'header-text'          => array( 'site-title', 'site-description' ),
+        'unlink-homepage-logo' => true, 
+    );
+ 
+    add_theme_support( 'custom-logo', $header_custom_logo );
+
+    register_nav_menus( array(
+        'primary_menu' => __( 'Primary Menu', 'acfPro' ),
+    ) );
+}
+add_action( 'after_setup_theme', 'acfPro_add_theme_support' );
+
+
 function acfPro_theme_enqueue() {
 
     // Enqueuing style

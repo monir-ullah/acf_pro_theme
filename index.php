@@ -1,3 +1,4 @@
+<?php /* Template Name: Home */ ?>
 <?php get_header(); ?>
       <!-- END nav -->
       <div class="hero-wrap">
