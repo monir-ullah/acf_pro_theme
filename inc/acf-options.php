@@ -15,6 +15,11 @@
             'menu_title'	=> 'Slider',
             'parent_slug'	=> 'theme-general-settings',
         ));
+        acf_add_options_sub_page(array(
+            'page_title' 	=> 'Theme Services',
+            'menu_title'	=> 'Services',
+            'parent_slug'	=> 'theme-general-settings',
+        ));
         
         acf_add_options_sub_page(array(
             'page_title' 	=> 'Theme Footer Settings',
