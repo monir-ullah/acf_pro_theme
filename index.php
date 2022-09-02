@@ -47,198 +47,20 @@
             ?>
          </div>
       </div>
-      
+
       <!-- Services Part One -->
       <?php get_template_part( '/template-parts/template-servicesOne' ) ?>
 
-      <section class="ftco-section bg-light ftco-no-pt">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6 col-lg-3 d-flex services align-self-stretch px-4 ftco-animate">
-                  <div class="d-block">
-                     <div class="icon d-flex mr-2">
-                        <span class="flaticon-accounting-1"></span>
-                     </div>
-                     <div class="media-body">
-                        <h3 class="heading">Accounting</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-3 d-flex services align-self-stretch px-4 ftco-animate">
-                  <div class="d-block">
-                     <div class="icon d-flex mr-2">
-                        <span class="flaticon-tax"></span>
-                     </div>
-                     <div class="media-body">
-                        <h3 class="heading">Tax, Compliance &amp; Payroll</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-3 d-flex services align-self-stretch px-4 ftco-animate">
-                  <div class="d-block">
-                     <div class="icon d-flex mr-2">
-                        <span class="flaticon-loan"></span>
-                     </div>
-                     <div class="media-body">
-                        <h3 class="heading">Financial Services</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-3 d-flex services align-self-stretch px-4 ftco-animate">
-                  <div class="d-block">
-                     <div class="icon d-flex mr-2">
-                        <span class="flaticon-budget"></span>
-                     </div>
-                     <div class="media-body">
-                        <h3 class="heading">Growth &amp; Funding Access</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section class="ftco-counter bg-light ftco-no-pt" id="section-counter">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                  <div class="block-18 text-center">
-                     <div class="text">
-                        <strong class="number" data-number="50">0</strong>
-                     </div>
-                     <div class="text">
-                        <span>Years of Experienced</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                  <div class="block-18 text-center">
-                     <div class="text">
-                        <strong class="number" data-number="8500">0</strong>
-                     </div>
-                     <div class="text">
-                        <span>Cases Completed</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                  <div class="block-18 text-center">
-                     <div class="text">
-                        <strong class="number" data-number="20">0</strong>
-                     </div>
-                     <div class="text">
-                        <span>Awards Won</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                  <div class="block-18 text-center">
-                     <div class="text">
-                        <strong class="number" data-number="50">0</strong>
-                     </div>
-                     <div class="text">
-                        <span>Expert Consultant</span>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section class="ftco-section testimony-section bg-light">
-         <div class="overlay"></div>
-         <div class="container">
-            <div class="row justify-content-center pb-5 mb-3">
-               <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
-                  <span class="subheading">Testimonies</span>
-                  <h2>Happy Clients &amp; Feedbacks</h2>
-               </div>
-            </div>
-            <div class="row ftco-animate">
-               <div class="col-md-12">
-                  <div class="carousel-testimony owl-carousel ftco-owl">
-                     <div class="item">
-                        <div class="testimony-wrap py-4">
-                           <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                           <div class="text">
-                              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                              <div class="d-flex align-items-center">
-                                 <div class="user-img" style="background-image: url(assets/images/person_1.jpg)"></div>
-                                 <div class="pl-3">
-                                    <p class="name">Roger Scott</p>
-                                    <span class="position">Marketing Manager</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="item">
-                        <div class="testimony-wrap py-4">
-                           <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                           <div class="text">
-                              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                              <div class="d-flex align-items-center">
-                                 <div class="user-img" style="background-image: url(assets/images/person_2.jpg)"></div>
-                                 <div class="pl-3">
-                                    <p class="name">Roger Scott</p>
-                                    <span class="position">Marketing Manager</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="item">
-                        <div class="testimony-wrap py-4">
-                           <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                           <div class="text">
-                              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                              <div class="d-flex align-items-center">
-                                 <div class="user-img" style="background-image: url(assets/images/person_3.jpg)"></div>
-                                 <div class="pl-3">
-                                    <p class="name">Roger Scott</p>
-                                    <span class="position">Marketing Manager</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="item">
-                        <div class="testimony-wrap py-4">
-                           <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                           <div class="text">
-                              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                              <div class="d-flex align-items-center">
-                                 <div class="user-img" style="background-image: url(assets/images/person_1.jpg)"></div>
-                                 <div class="pl-3">
-                                    <p class="name">Roger Scott</p>
-                                    <span class="position">Marketing Manager</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="item">
-                        <div class="testimony-wrap py-4">
-                           <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                           <div class="text">
-                              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                              <div class="d-flex align-items-center">
-                                 <div class="user-img" style="background-image: url(assets/images/person_2.jpg)"></div>
-                                 <div class="pl-3">
-                                    <p class="name">Roger Scott</p>
-                                    <span class="position">Marketing Manager</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+      <!-- Services Part Two -->
+      <?php get_template_part( '/template-parts/template-servicesTwo' ) ?>
+
+      <!-- Services Part Two -->
+      <?php get_template_part( '/template-parts/template-counter' ) ?>
+      
+      <!-- Services Part Two -->
+      <?php get_template_part( '/template-parts/template-testimonial' ) ?>
+      
+      
       <section class="ftco-section ftco-no-pt bg-light ftco-faqs">
          <div class="container">
             <div class="row">
