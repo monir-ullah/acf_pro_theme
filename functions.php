@@ -7,7 +7,7 @@ function acfPro_add_theme_support(){
 
     load_theme_textdomain('acfPro', get_template_directory() . '/languages');
     add_theme_support( 'title-tag' );
-    add_theme_support( 'post-thumbnails', array( 'post' ) );
+    add_theme_support( 'post-thumbnails', array( 'post','page' ) );
     $header_custom_logo = array(
         'height'               => 100,
         'width'                => 400,

@@ -36,7 +36,7 @@
                                     <div><a href="#"><?php echo get_the_author_nickname( );?></a></div>
                                     <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> <?php echo get_comments_number(); ?></a></div>
                                     </div>
-                                    <h3 class="heading"><a href="#"><?php the_title(); ?></a></h3>
+                                    <h3 class="heading"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                 </div>
                             </div>
                         </div>
