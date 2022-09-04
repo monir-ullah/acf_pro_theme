@@ -65,5 +65,11 @@
 
    <!-- Blog Part -->
    <?php get_template_part( '/template-parts/template-blog' ) ?>
+
+   <!-- CTA Part -->
+   <?php get_template_part( '/template-parts/template-cta' ) ?>
+
+   <!-- CTA Part -->
+   <?php get_template_part( '/template-parts/template-pricing' ) ?>
          
 <?php get_footer(); ?>
