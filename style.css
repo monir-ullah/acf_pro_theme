@@ -94,11 +94,15 @@ li.current-menu-item a::before {
     z-index: -1; 
 }
 
-.services-page-acf .ftco-section {
+.whtie-bg-acf .ftco-section {
     background: white !important;
     margin-top: 80px;
     margin-bottom: 0px;
 }
 .mt-20{
     margin-top: 20px !important;
+}
+
+.whtie-bg-acf #section-counter {
+    background: white !important;
 }

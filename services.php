@@ -3,7 +3,7 @@
 <!-- Bread Cum -->
 <?php get_template_part( '/template-parts/template-breadcum' ); ?>
    <!-- Services Part Two Part -->
-<div class="mt-5 services-page-acf">
+<div class="mt-5 whtie-bg-acf">
    <div class="mt-5 mt-20">
       <?php get_template_part( '/template-parts/template-servicesTwo' ) ?>
    </div>

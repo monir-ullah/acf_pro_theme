@@ -54,10 +54,10 @@
    <!-- Services Part Two -->
    <?php get_template_part( '/template-parts/template-servicesTwo' ) ?>
 
-   <!-- Services Part Two -->
+   <!-- Counter Part Two -->
    <?php get_template_part( '/template-parts/template-counter' ) ?>
    
-   <!-- Services Part Two -->
+   <!-- Testimonial Part Two -->
    <?php get_template_part( '/template-parts/template-testimonial' ) ?>
    
    <!-- FAQ Part -->
