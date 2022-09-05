@@ -5,12 +5,34 @@
                <div class="col-md-9 py-5">
                   <div class="row">
                      <div class="col-md-4 mb-md-0 mb-4">
-                        <h2 class="footer-heading">About us</h2>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <?php 
+
+                           $footer_about_us_heading_text = get_field('footer_about_us_heading_text','option');
+                           $footer_about_us_textarea = get_field('footer_about_us_textarea','option');
+                           $footer_about_social_media_repeater = get_field('footer_about_social_media_repeater','option');
+                           $footer_copy_right = get_field('footer_copy_right','option');
+                           if($footer_about_us_heading_text){ ?>
+                              <h2 class="footer-heading"><?php echo $footer_about_us_heading_text; ?></h2>
+                            <?php
+                           }
+                           if($footer_about_us_heading_text){ ?>
+                             <p><?php echo $footer_about_us_textarea; ?></p>
+                            <?php
+                           }
+                        ?>
                         <ul class="ftco-footer-social p-0">
-                           <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+                           <?php 
+                              if($footer_about_social_media_repeater){
+                                 foreach($footer_about_social_media_repeater as $single_social){ ?>
+                                    <a href="<?php echo $single_social['footer_social_media_link'];?>"><i class="fa <?php echo $single_social['footer_social_media_icon'];?>"></i></a>
+                                  <?php
+                                 }
+                              }
+                           ?>
+                           
+                           <!-- <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
                            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
-                           <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+                           <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li> -->
                         </ul>
                      </div>
                      <div class="col-md-8">
@@ -53,16 +75,29 @@
                      <div class="col-md-12">
                         <p class="copyright">
                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                           Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                           <?php   
+                              if($footer_copy_right){ 
+                                 echo $footer_copy_right;
+                              } 
+                           ?>
                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                      </div>
                   </div>
                </div>
                <div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
-                  <h2 class="footer-heading">Free consultation</h2>
-                  <form action="#" class="form-consultation">
-                     <div class="form-group">
+                  <?php
+                     $footer_contact_from_text_heading = get_field('footer_contact_from_text_heading','option');
+                     if($footer_contact_from_text_heading){ ?>
+                        <h2 class="footer-heading"><?php echo $footer_contact_from_text_heading; ?></h2>
+                      <?php
+                     }
+                  ?>
+                  <div  class="form-consultation">
+                     <?php 
+                        echo do_shortcode('[contact-form-7 id="164" title="Footer_Contact Form"]');
+                     ?>
+                     <!-- <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Name">
                      </div>
                      <div class="form-group">
@@ -76,8 +111,8 @@
                      </div>
                      <div class="form-group">
                         <button type="submit" class="form-control submit px-3">Send A Message</button>
-                     </div>
-                  </form>
+                     </div> -->
+                  </div>
                </div>
             </div>
          </div>

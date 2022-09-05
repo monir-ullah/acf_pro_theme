@@ -11675,6 +11675,19 @@ textarea.form-control {
   margin: 0 10px 0 0;
   display: inline-block;
 }
+.ftco-footer-social a {
+  border-radius: 50%;
+  display: inline-block;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  margin-right: 2%;
+}
+.ftco-footer-social i {
+  padding: 15px;
+}
+.ftco-footer-social a:hover{
+  color: #fff;
+}
 .ftco-footer-social li a {
   height: 40px;
   width: 40px;
@@ -11684,7 +11697,7 @@ textarea.form-control {
   border-radius: 50%;
   position: relative;
 }
-.ftco-footer-social li a span {
+.ftco-footer-social li a i {
   position: absolute;
   font-size: 20px;
   top: 50%;
