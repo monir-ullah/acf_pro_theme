@@ -10,13 +10,25 @@
                      <div class="row no-gutters">
                         <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
                            <div class="contact-wrap w-100 p-md-5 p-4">
-                              <h3 class="mb-4">Get in touch</h3>
+                              <?php 
+                                 $contact_heading_second = get_field('contact_heading_second', 'option');
+                                 $contact_text_area_second = get_field('contact_text_area_second', 'option');
+                                 if($contact_heading_second){ ?>
+                                     <h3 class="mb-4"><?php echo $contact_heading_second;?></h3>
+                                  <?php
+                                 }
+                              ?>
                               <div id="form-message-warning" class="mb-4"></div>
-                              <div id="form-message-success" class="mb-4">
-                                 Your message was sent, thank you!
-                              </div>
-                              <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-                                 <div class="row">
+                              <?php 
+                              
+                                 if($contact_text_area_second){ ?>
+                                     <div id="form-message-success" class="mb-4"><?php echo $contact_text_area_second;?></div>
+                                    <?php
+                                 }
+                              ?>
+                              <div  id="contactForm" class="contactForm">
+                                 <?php echo do_shortcode('[contact-form-7 id="184" title="Contact Page"]'); ?>
+                                 <!-- <div class="row">
                                     <div class="col-md-6">
                                        <div class="form-group">
                                           <label class="label" for="name">Full Name</label>
@@ -47,46 +59,41 @@
                                           <div class="submitting"></div>
                                        </div>
                                     </div>
-                                 </div>
-                              </form>
+                                 </div> -->
+                              </div>
                            </div>
                         </div>
                         <div class="col-lg-4 col-md-5 d-flex align-items-stretch">
                            <div class="info-wrap bg-primary w-100 p-md-5 p-4">
-                              <h3>Let's get in touch</h3>
-                              <p class="mb-4">We're open for any suggestion or just to have a chat</p>
-                              <div class="dbox w-100 d-flex align-items-start">
-                                 <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-map-marker"></span>
-                                 </div>
-                                 <div class="text pl-3">
-                                    <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-                                 </div>
-                              </div>
-                              <div class="dbox w-100 d-flex align-items-center">
-                                 <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-phone"></span>
-                                 </div>
-                                 <div class="text pl-3">
-                                    <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-                                 </div>
-                              </div>
-                              <div class="dbox w-100 d-flex align-items-center">
-                                 <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-paper-plane"></span>
-                                 </div>
-                                 <div class="text pl-3">
-                                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-                                 </div>
-                              </div>
-                              <div class="dbox w-100 d-flex align-items-center">
-                                 <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-globe"></span>
-                                 </div>
-                                 <div class="text pl-3">
-                                    <p><span>Website</span> <a href="#">yoursite.com</a></p>
-                                 </div>
-                              </div>
+                              <?php
+                                 $contact_heading_first = get_field('contact_heading_first', 'option');
+                                 $contact_text_area = get_field('contact_text_area', 'option');
+                                 $contact_page_info_repeater = get_field('contact_page_info_repeater', 'option');
+                                 if($contact_heading_first){ ?>
+                                    <h3 class="mb-4"><?php echo $contact_heading_first;?></h3>
+                                  <?php
+                                 }
+                                 if($contact_text_area){ ?>
+                                    <p class="mb-4"><?php echo $contact_text_area;?></p>
+                                  <?php
+                                 }
+                                 if($contact_page_info_repeater){
+                                    foreach($contact_page_info_repeater as $single_contact){ 
+                                          $contact_info_icon = $single_contact['contact_info_icon'];
+                                          $contact_info_text = $single_contact['contact_info_text'];
+                                       ?>
+                                       <div class="dbox w-100 d-flex align-items-start">
+                                          <div class="icon d-flex align-items-center justify-content-center">
+                                             <span><i class="fa <?php echo $contact_info_icon; ?>"></i></span>
+                                          </div>
+                                          <div class="text pl-3 mt-2">
+                                             <p><?php echo $contact_info_text; ?></p>
+                                          </div>
+                                       </div>
+                                     <?php
+                                    }
+                                 }
+                              ?>
                            </div>
                         </div>
                      </div>

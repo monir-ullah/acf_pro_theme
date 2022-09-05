@@ -33,6 +33,12 @@
             'menu_title'	=> 'Pricing',
             'parent_slug'	=> 'theme-general-settings',
         ));
+
+        acf_add_options_sub_page(array(
+            'page_title' 	=> 'Theme Contact',
+            'menu_title'	=> 'Contact Page',
+            'parent_slug'	=> 'theme-general-settings',
+        ));
         
         acf_add_options_sub_page(array(
             'page_title' 	=> 'Theme Footer Settings',
