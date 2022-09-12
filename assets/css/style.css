@@ -12379,6 +12379,7 @@ textarea.form-control {
   padding: 5px 10px;
   background: #e6e6e6;
   color: #000000;
+  width: 9%;
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -12386,8 +12387,10 @@ textarea.form-control {
   border-radius: 4px;
 }
 .comment-list li .comment-body .reply:hover {
-  color: #fff;
-  background: black;
+  background: #1ba12d;
+}
+.comment-list li .comment-body .reply:hover a {
+  color: #e6e6e6;
 }
 
 .search-form .form-group {

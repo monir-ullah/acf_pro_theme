@@ -9,100 +9,45 @@
                      <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="img-fluid">
                   </p>
                   <h2 class="mb-3"><?php the_title(); ?></h2>
-                  <p><?php the_content(); ?></p>
+                  <div class="single-post"><?php the_content(); ?></div>
                   <div class="tag-widget post-tag-container mb-5 mt-5">
                      <div class="tagcloud">
-                        <a href="#" class="tag-cloud-link">Life</a>
-                        <a href="#" class="tag-cloud-link">Sport</a>
-                        <a href="#" class="tag-cloud-link">Tech</a>
-                        <a href="#" class="tag-cloud-link">Travel</a>
+                     <?php
+                        $posttags = get_the_tags();
+                        if ($posttags) {
+                           foreach($posttags as $tag) { ?>
+                              <a href="#" class="tag-cloud-link"><?php echo $tag->name; ?></a>
+                           <?php
+                           }
+                        }
+                        ?>    
                      </div>
                   </div>
+                  <?php
+                     $user = wp_get_current_user();
+                  ?>
                   <div class="about-author d-flex p-4 bg-light">
                      <div class="bio mr-5">
-                        <img src="assets/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
+                        <?php 
+                           if ( $user ) :
+                              ?>
+                              <img src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" />
+                           <?php endif; 
+                        ?>
                      </div>
                      <div class="desc">
-                        <h3>George Washington</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                        <h3><?php echo get_the_author_meta( 'display_name', $user->ID );?></h3>
+                        <p><?php echo get_the_author_meta( 'user_description', $user->ID );?></p>
                      </div>
                   </div>
                   <div class="pt-5 mt-5">
-                     <h3 class="mb-5">6 Comments</h3>
-                     <ul class="comment-list">
-                        <li class="comment">
-                           <div class="vcard bio">
-                              <img src="assets/images/person_1.jpg" alt="Image placeholder">
-                           </div>
-                           <div class="comment-body">
-                              <h3>John Doe</h3>
-                              <div class="meta">March 31, 2020 at 2:21pm</div>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                              <p><a href="#" class="reply">Reply</a></p>
-                           </div>
-                        </li>
-                        <li class="comment">
-                           <div class="vcard bio">
-                              <img src="assets/images/person_1.jpg" alt="Image placeholder">
-                           </div>
-                           <div class="comment-body">
-                              <h3>John Doe</h3>
-                              <div class="meta">March 31, 2020 at 2:21pm</div>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                              <p><a href="#" class="reply">Reply</a></p>
-                           </div>
-                           <ul class="children">
-                              <li class="comment">
-                                 <div class="vcard bio">
-                                    <img src="assets/images/person_1.jpg" alt="Image placeholder">
-                                 </div>
-                                 <div class="comment-body">
-                                    <h3>John Doe</h3>
-                                    <div class="meta">March 31, 2020 at 2:21pm</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                    <p><a href="#" class="reply">Reply</a></p>
-                                 </div>
-                                 <ul class="children">
-                                    <li class="comment">
-                                       <div class="vcard bio">
-                                          <img src="assets/images/person_1.jpg" alt="Image placeholder">
-                                       </div>
-                                       <div class="comment-body">
-                                          <h3>John Doe</h3>
-                                          <div class="meta">March 31, 2020 at 2:21pm</div>
-                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                          <p><a href="#" class="reply">Reply</a></p>
-                                       </div>
-                                       <ul class="children">
-                                          <li class="comment">
-                                             <div class="vcard bio">
-                                                <img src="assets/images/person_1.jpg" alt="Image placeholder">
-                                             </div>
-                                             <div class="comment-body">
-                                                <h3>John Doe</h3>
-                                                <div class="meta">March 31, 2020 at 2:21pm</div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                                <p><a href="#" class="reply">Reply</a></p>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                 </ul>
-                              </li>
-                           </ul>
-                        </li>
-                        <li class="comment">
-                           <div class="vcard bio">
-                              <img src="assets/images/person_1.jpg" alt="Image placeholder">
-                           </div>
-                           <div class="comment-body">
-                              <h3>John Doe</h3>
-                              <div class="meta">March 31, 2020 at 2:21pm</div>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                              <p><a href="#" class="reply">Reply</a></p>
-                           </div>
-                        </li>
-                     </ul>
+                     <div>
+                        <?php 
+                           if ( comments_open() || get_comments_number() ) :
+                              comments_template();
+                           endif;
+                        ?>
+                     </div>
                      <!-- END comment-list -->
                      <div class="comment-form-wrap pt-5">
                         <h3 class="mb-5">Leave a comment</h3>

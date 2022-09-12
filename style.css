@@ -106,3 +106,7 @@ li.current-menu-item a::before {
 .whtie-bg-acf #section-counter {
     background: white !important;
 }
+
+.single-post p img {
+    width: 100% !important;
+}

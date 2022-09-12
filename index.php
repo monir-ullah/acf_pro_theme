@@ -15,7 +15,7 @@
                   $blog_query->the_post(); ?>
                   <div class="col-md-4 d-flex ftco-animate">
                         <div class="blog-entry align-self-stretch">
-                           <a href="blog-single.html" class="block-20 rounded" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+                           <a href="<?php echo get_the_permalink(); ?>" class="block-20 rounded" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
                            </a>
                            <div class="text p-4">
                               <div class="meta mb-2">

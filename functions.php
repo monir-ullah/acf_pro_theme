@@ -60,4 +60,81 @@ add_action( 'wp_enqueue_scripts', 'acfPro_theme_enqueue' );
 
 
 
+function mytheme_comment($comment, $args, $depth) {
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }?>
+    <<?php echo $tag; ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID() ?>"><?php 
+    if ( 'div' != $args['style'] ) { ?>
+        <div class="single-comment">
+        <div id="div-comment-<?php comment_ID() ?>" class="comment-body"><?php
+    } ?>
+        <div class="comment-author vcard"><?php 
+            if ( $args['avatar_size'] != 0 ) {
+                echo get_avatar( $comment, $args['avatar_size'] ); 
+            } 
+        ?>
+        </div>
+        <?php 
+            if ( $comment->comment_approved == '0' ) { ?>
+            <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em><br/><?php 
+        } ?>
+        <div class="comment-meta commentmetadata">
+            <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php
+
+                printf( __( '<h3 class="fn">%s</h3>' ), get_comment_author_link() );
+                /* translators: 1: date, 2: time */
+                printf( 
+                    __('%1$s at %2$s'), 
+                    get_comment_date(),  
+                    get_comment_time() 
+                ); ?>
+            </a><?php 
+            edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
+            <?php comment_text(); ?>
+                <div class="reply"><?php 
+                    comment_reply_link( 
+                        array_merge( 
+                            $args, 
+                            array( 
+                                'add_below' => $add_below, 
+                                'depth'     => $depth, 
+                                'max_depth' => $args['max_depth'] 
+                            ) 
+                        ) 
+                    ); ?>
+                </div>
+        </div>
+ 
+        
+ 
+        <?php 
+    if ( 'div' != $args['style'] ) : ?>
+        </div></div><?php 
+    endif;
+}
+
+
+function move_comment_field( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+    return $fields;
+}
+add_filter( 'comment_form_fields', 'move_comment_field' );
+
+
+function comment_form_hide_cookies( $fields ) {
+	unset( $fields['cookies'] );
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'comment_form_hide_cookies' );
+
+
+
+
 ?>
