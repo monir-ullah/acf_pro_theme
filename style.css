@@ -157,3 +157,6 @@ input {
     border: 1px solid #adadad59;
     border-radius: 5px;
 }
+.form-group input.btn.py-3.px-4.btn-primary {
+    width: 30%;
+}
