@@ -41,7 +41,7 @@
                      </div>
                   </div>
                   <div class="pt-5 mt-5">
-                     <div>
+                     <div class="custom-comment-acf">
                         <?php 
                            if ( comments_open() || get_comments_number() ) :
                               comments_template();

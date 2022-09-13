@@ -135,6 +135,8 @@ function comment_form_hide_cookies( $fields ) {
 add_filter( 'comment_form_default_fields', 'comment_form_hide_cookies' );
 
 
+// cusomizing comment form
+
 
 
 ?>

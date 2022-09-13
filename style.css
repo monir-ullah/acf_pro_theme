@@ -110,3 +110,50 @@ li.current-menu-item a::before {
 .single-post p img {
     width: 100% !important;
 }
+
+.comment-form-comment label {
+    margin-bottom: 0.5rem;
+}
+span.required-field-message {
+    display: none;
+}
+form#commentform {
+    background: #f8f9fd !important;
+}
+.comment-form-comment textarea {
+    overflow: auto;
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid #adadad59;
+    resize: vertical;
+}
+input#submit {
+    border-radius: 5px;
+    padding: 10px 35px;
+    transition: .3s;
+    width: 30%;
+    background: #1ba12d;
+    border: 1px solid #1ba12d;
+    color: #fff;
+}
+
+input#submit:hover {
+    border: 1px solid #1ba12d;
+    background: transparent;
+    color: #1ba12d;
+}
+
+form#commentform {
+    padding: 10px 0px 20px 30px;
+}
+.comment-form label {
+    display: block;
+}
+
+input {
+    overflow: visible;
+    width: 95%;
+    padding: 5px;
+    border: 1px solid #adadad59;
+    border-radius: 5px;
+}
