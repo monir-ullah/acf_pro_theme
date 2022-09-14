@@ -145,6 +145,7 @@ input#submit:hover {
 
 form#commentform {
     padding: 10px 0px 20px 30px;
+    margin-top: 25px;
 }
 .comment-form label {
     display: block;
@@ -160,3 +161,32 @@ input {
 .form-group input.btn.py-3.px-4.btn-primary {
     width: 30%;
 }
+
+.footer .widgettitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+.footer ul {
+    padding: 0;
+    margin: 0;
+}
+.footer ul li a {
+    color: rgba(255, 255, 255, 0.5);
+}
+.footer ul li {
+    list-style: none;
+}
+.footer .tagcloud a {
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    display: block;
+    font-weight: 500;
+    font-size: 12px !important;
+}
+
+.tagcloud a {
+    font-size: 8pt !important;
+}  

@@ -135,7 +135,155 @@ function comment_form_hide_cookies( $fields ) {
 add_filter( 'comment_form_default_fields', 'comment_form_hide_cookies' );
 
 
-// cusomizing comment form
+// Deactive gutenberg widget 
+
+if ( ! function_exists( 'themesdna_activate_classic_widgets' ) ) {
+    function themesdna_activate_classic_widgets() {
+        remove_theme_support( 'widgets-block-editor' );
+    }
+}   
+add_action( 'after_setup_theme', 'themesdna_activate_classic_widgets' );
+
+
+/**
+ * Add a sidebar.
+ */
+function acfPro_register_sidebar() {
+    register_sidebar( array(
+        'name'          => __( 'Blog Sidebar', 'acfPro' ),
+        'id'            => 'recent-blog-sidebar-1',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'acfPro' ),
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widgettitle">',
+        'after_title'   => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Tag Cloud', 'acfPro' ),
+        'id'            => 'tag-cloud',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'acfPro' ),
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Footer Sidebar 1', 'acfPro' ),
+        'id'            => 'footer-1',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'acfPro' ),
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Footer Sidebar 2', 'acfPro' ),
+        'id'            => 'footer-2',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'acfPro' ),
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widgettitle">',
+        'after_title'   => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Footer Sidebar Blog', 'acfPro' ),
+        'id'            => 'footer-3',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'acfPro' ),
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widgettitle">',
+        'after_title'   => '</h3>',
+    ) );
+    
+}
+add_action( 'widgets_init', 'acfPro_register_sidebar' );
+
+
+// Creating the widget 
+class acf_post_widget extends WP_Widget {
+  
+    function __construct() {
+    parent::__construct(
+      
+    // Base ID of your widget
+    'acf_post', 
+      
+    // Widget name will appear in UI
+    __('ACF Latest Post Widget', 'acf'), 
+      
+    // Widget description
+    array( 'description' => __( 'Sample widget', 'acf' ), ) 
+    );
+    }
+      
+    // Creating widget front-end
+      
+    public function widget( $args, $instance ) {
+    $title = apply_filters( 'widget_title', $instance['title'] );
+      
+    // before and after widget arguments are defined by themes
+    echo $args['before_widget'];
+    if ( ! empty( $title ) )
+    echo $args['before_title'] . $title . $args['after_title'];
+      $post = array(
+          'post_type' => 'post',
+          'posts_per_page' => 3
+      );
+      $query = new WP_Query($post);
+      while($query->have_posts()) {
+          $query->the_post();
+    ?>
+    <div class="block-21 mb-4 d-flex">
+        <a class="blog-img mr-4" style="background-image: url(<?php echo the_post_thumbnail_url();?>"></a>
+        <div class="text">
+            <h3 class="heading"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+            <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> <?php the_date();?></a></div>
+                <div><a href=""><span class="icon-person"></span> <?php the_author_link();?></a></div>
+            </div>
+        </div>
+    </div>
+    <?php
+      }
+    ?>
+        
+    <?php
+    echo $args['after_widget'];
+    }
+              
+    // Widget Backend 
+    public function form( $instance ) {
+    if ( isset( $instance[ 'title' ] ) ) {
+    $title = $instance[ 'title' ];
+    }
+    else {
+    $title = __( 'Recent Posts', 'acf' );
+    }
+    // Widget admin form
+    ?>
+    <p>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+    </p>
+    <?php 
+    }
+          
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+    $instance = array();
+    $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+    return $instance;
+    }
+     
+    // Class wpb_widget ends here
+    } 
+     
+     
+    // Register and load the widget
+    function acf_post_load_widget() {
+        register_widget( 'acf_post_widget' );
+    }
+    add_action( 'widgets_init', 'acf_post_load_widget' );
 
 
 

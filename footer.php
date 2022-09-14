@@ -29,10 +29,6 @@
                                  }
                               }
                            ?>
-                           
-                           <!-- <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
-                           <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
-                           <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li> -->
                         </ul>
                      </div>
                      <div class="col-md-8">
@@ -40,31 +36,25 @@
                            <div class="col-md-12 col-lg-10">
                               <div class="row">
                                  <div class="col-md-4 mb-md-0 mb-4">
-                                    <h2 class="footer-heading">Services</h2>
-                                    <ul class="list-unstyled">
-                                       <li><a href="#" class="py-1 d-block">Market Analysis</a></li>
-                                       <li><a href="#" class="py-1 d-block">Accounting Advisor</a></li>
-                                       <li><a href="#" class="py-1 d-block">General Consultancy</a></li>
-                                       <li><a href="#" class="py-1 d-block">Structured Assestment</a></li>
-                                    </ul>
+                                    <?php
+                                       if(is_active_sidebar('footer-2')){
+                                          dynamic_sidebar('footer-2' );
+                                       }
+                                    ?>
                                  </div>
                                  <div class="col-md-4 mb-md-0 mb-4">
-                                    <h2 class="footer-heading">Discover</h2>
-                                    <ul class="list-unstyled">
-                                       <li><a href="#" class="py-1 d-block">About us</a></li>
-                                       <li><a href="#" class="py-1 d-block">Contract us</a></li>
-                                       <li><a href="#" class="py-1 d-block">Terms &amp; Conditions</a></li>
-                                       <li><a href="#" class="py-1 d-block">Policies</a></li>
-                                    </ul>
+                                    <?php 
+                                       if(is_active_sidebar('footer-1')){
+                                          dynamic_sidebar('footer-1' );
+                                       }
+                                    ?>
                                  </div>
                                  <div class="col-md-4 mb-md-0 mb-4">
-                                    <h2 class="footer-heading">Resources</h2>
-                                    <ul class="list-unstyled">
-                                       <li><a href="#" class="py-1 d-block">Security</a></li>
-                                       <li><a href="#" class="py-1 d-block">Global</a></li>
-                                       <li><a href="#" class="py-1 d-block">Charts</a></li>
-                                       <li><a href="#" class="py-1 d-block">Privacy</a></li>
-                                    </ul>
+                                    <?php 
+                                       if(is_active_sidebar('footer-3')){
+                                          dynamic_sidebar('footer-3' );
+                                       }
+                                    ?>
                                  </div>
                               </div>
                            </div>
